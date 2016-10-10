@@ -1,5 +1,13 @@
-<ul>
-    <li>Gladiator</li>
-    <li>Saving Private Ryan</li>
-    <li>Die Hard</li>
-</ul>
+<header class="list--header">My Movie List</header>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Alarm</th>
+        <th>Year</th>
+    </tr>
+    <tr class="list--element" ng-repeat="x in movies">
+        <td>{{ x.title }}</td>
+        <td>{{ x.alarm }}</td>
+        <td>{{ x.year }}</td>
+    </tr>
+</table>

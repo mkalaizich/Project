@@ -1,8 +1,15 @@
 <h2>Set a Movie Alarm</h2>
-<select>
-    <option>Gladiator</option>
-    <option>Saving Private Ryan</option>
-    <option>Die Hard</option>
+<select ng-model="selectedMovie">
+    <option ng-repeat="x in movies">{{ x.title }}</option>
 </select>
-<input type="date" placeholder="When do you want to watch this movie"/>
-<button>Add the Movie</button>
+<select ng-model="alarmDay">
+    <option>NO</option>
+    <option>Monday</option>
+    <option>Tuesday</option>
+    <option>Wednesday</option>
+    <option>Thursday</option>
+    <option>Friday</option>
+    <option>Saturday</option>
+    <option>Sunday</option>
+</select>
+<button ng-click="setAlarm()">Set Alarm</button>
