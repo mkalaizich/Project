@@ -11,7 +11,7 @@ app.config(function($routeProvider) {
     })
     .when('/manage', {
         templateUrl : './views/manage.html',
-        controller: 'addController'
+        controller: 'manageController'
     })
     .when('/alarms', {
         templateUrl : './views/alarms.html',

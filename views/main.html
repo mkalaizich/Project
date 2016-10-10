@@ -1,2 +1,13 @@
 <h2>MAIN</h2>
-<p>If the list is empty start by adding a few movies</p>
+<p>Movie reminder it's a webapp for you to make a "To-watch" movie list, set alarms for them and find new movies to watch</p>
+<a class="link" ng-click="toggle = !toggle">How to use</a>
+<div ng-show="toggle">
+    <p>Click on the manage link to add new movies or delete some of the listed ones.</p>
+    <p>
+        Before adding a movie you will see it's poster and plot description. If the movie displayed it's not
+        the one you're looking for, specify it's release year.
+    </p>
+    <p>
+        You can set an alarm to remind you which movie you wanted to watch in a partiular day!
+    </p>
+</div>

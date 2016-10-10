@@ -1,4 +1,4 @@
-app.controller('addController', function($scope, $http, services) {
+app.controller('manageController', function($scope, $http, services) {
     
     $scope.movies = [];
     $scope.selectedMovie = '';
