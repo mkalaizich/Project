@@ -1,3 +1,14 @@
 <input type="text" ng-model="title" placeholder="Enter a Movie"/>
 <input type="text" ng-model="year" placeholder="Enter it's year"/>
-<button ng-click="add()">Add the Movie</button>
+<button ng-click="search()">Search Movie</button><br>
+<div ng-show="example">
+    <img src="{{ searchedMovie.poster }}"><br>
+    <p>{{ searchedMovie.plot }}</p>
+    <button ng-click="add()">Add Movie</button><button ng-click="notAdd()">No</button><br>
+    <p>If this is not the movie you're looking for, please specify the year</p>
+</div>
+<hr>
+<select ng-model="selectedMovie">
+    <option ng-repeat="x in movies">{{ x.title }}</option>
+</select>
+<button ng-click="removeMovieFromList()">Remove Movie</button>

@@ -1,4 +1,4 @@
-<header class="list--header">My Movie List</header>
+<header>My Movie List</header>
 <table>
     <tr>
         <th>Title</th>
@@ -6,7 +6,7 @@
         <th>Year</th>
     </tr>
     <tr class="list--element" ng-repeat="x in movies">
-        <td>{{ x.title }}</td>
+        <td ng-class="{blink_me: {{ x.alarmOn }}}">{{ x.title }}</td>
         <td>{{ x.alarm }}</td>
         <td>{{ x.year }}</td>
     </tr>

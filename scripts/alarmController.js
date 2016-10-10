@@ -1,7 +1,7 @@
 app.controller('alarmController', function($scope, services) {
 
     $scope.movies = [];
-    $scope.alarmDay = 'NO';
+    $scope.alarmDay = 'Off';
     
     for (let i = 0; i < localStorage.length; i++) {
         let storedMovie = JSON.parse(localStorage.getItem(localStorage.key( i )));
@@ -16,7 +16,7 @@ app.controller('alarmController', function($scope, services) {
             clone.alarm = $scope.alarmDay;
             services.store(clone);
             $scope.selectedMovie = '';
-            $scope.alarmDay = 'NO';
+            $scope.alarmDay = 'Off';
         }
     }
 });
