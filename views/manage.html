@@ -9,6 +9,6 @@
 </div>
 <hr>
 <select ng-model="selectedMovie">
-    <option ng-repeat="x in movies">{{ x.title }}</option>
+    <option ng-repeat="x in movies | orderBy:'title'">{{ x.title }}</option>
 </select>
 <button ng-click="removeMovieFromList()">Remove Movie</button>

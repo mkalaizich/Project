@@ -41,7 +41,8 @@ app.service('services', function () {
     this.store = function (newMovie) {
         localStorage.setItem(newMovie.title, JSON.stringify({ 
             title: newMovie.title, 
-            year: newMovie.year, 
+            year: newMovie.year,
+            genre: newMovie.genre, 
             plot: newMovie.plot,
             poster: newMovie.poster,
             runtime: newMovie.runtime,
@@ -51,10 +52,11 @@ app.service('services', function () {
 
     this.saveMovie = function (response) {
         let duration = parseInt(response.data.Runtime);
-        
+        console.log(response.data.Genre);
         return newMovie = {
                     title: response.data.Title,
                     year: response.data.Year,
+                    genre: response.data.Genre,
                     plot: response.data.Plot,
                     poster: response.data.Poster,
                     runtime: duration,

@@ -1,7 +1,7 @@
 app.controller('listController', function($scope, services) {
 
     $scope.movies = [];
-    $scope.maxRuntime = 201;
+    $scope.maxRuntime = 210;
     let day = services.currentDay();
     
     for (let i = 0; i < localStorage.length; i++) {
@@ -14,7 +14,8 @@ app.controller('listController', function($scope, services) {
         
         $scope.movies.push({ 
             title: storedMovie.title, 
-            year: storedMovie.year, 
+            year: storedMovie.year,
+            genre: storedMovie.genre, 
             plot: storedMovie.plot,
             poster: storedMovie.poster,
             runtime: storedMovie.runtime,
