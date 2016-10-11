@@ -1,11 +1,12 @@
 <header>My Movie List</header>
+<label>Filter by Maximum Runtime<input ng-model="maxRuntime"></label><br>
 <table>
     <tr>
         <th>Title</th>
         <th>Alarm</th>
         <th>Year</th>
     </tr>
-    <tr class="list--element" ng-repeat="x in movies">
+    <tr class="list--element" ng-repeat="x in movies | maxDuration: maxRuntime">
         <td ng-class="{blink_me: {{ x.alarmOn }}}">{{ x.title }}</td>
         <td>{{ x.alarm }}</td>
         <td>{{ x.year }}</td>
