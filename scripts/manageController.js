@@ -10,21 +10,7 @@ app.controller('manageController', function($scope, $http, services) {
         
         $scope.movies.push({ title: storedMovie.title});
     };
-
-    $scope.search = function () {
-        if ($scope.title != null) {
-            let url = 'http://www.omdbapi.com/?t=' + $scope.title.replace(/ /g, "+") + '&y=' + $scope.year + '&plot=short&r=json';
-            $http.get(url).then(function(response) {
-                if (response.data.Response == 'True') {
-                    $scope.searchedMovie = services.saveMovie(response);
-                }
-            })
-        $scope.title = null;
-        $scope.year = '';
-        $scope.example = 1;
-        }   
-    }
-
+    //Controller Functions
     $scope.add = function () {
         services.store($scope.searchedMovie);
         $scope.example = 0;
@@ -40,7 +26,6 @@ app.controller('manageController', function($scope, $http, services) {
         let index = -1;
 
         index = services.getIndex($scope.selectedMovie, $scope.movies);
-        
         if(index >= 0) {
 
             $scope.movies.splice(index, 1);
@@ -48,5 +33,24 @@ app.controller('manageController', function($scope, $http, services) {
         }
 
         $scope.selectedMovie = null;
+    }
+
+    $scope.search = function () {
+        if ($scope.title != null) {
+            let url = 'http://www.omdbapi.com/?t=' + $scope.title.replace(/ /g, "+") + '&y=' + $scope.year + '&plot=short&r=json';
+            $http.get(url).then(function(response) {
+                if (response.data.Response == 'True') {
+                    $scope.searchedMovie = services.saveMovie(response);
+                } else {
+                    $scope.searchedMovie = {
+                        plot : 'Movie title misspelled or does not exist',
+                        poster : 'https://pbs.twimg.com/profile_images/600060188872155136/st4Sp6Aw.jpg'
+                    };
+                }
+            })
+        $scope.title = null;
+        $scope.year = '';
+        $scope.example = 1;
+        }   
     }
 });

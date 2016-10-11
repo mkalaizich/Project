@@ -1,14 +1,5 @@
 app.service('services', function () {
 
-    this.getIndex = function (title, target) {
-        for (let i = 0; i < target.length; i++){
-            if (target[i].title == title){
-                return index = i;
-                break;
-            }
-        }
-    }
-
     this.currentDay = function () {
         let date = new Date();
         let day = date.getDay();
@@ -38,6 +29,15 @@ app.service('services', function () {
         }
     }
 
+    this.getIndex = function (title, target) {
+        for (let i = 0; i < target.length; i++){
+            if (target[i].title == title){
+                return index = i;
+                break;
+            }
+        }
+    }
+
     this.store = function (newMovie) {
         localStorage.setItem(newMovie.title, JSON.stringify({ 
             title: newMovie.title, 
@@ -52,13 +52,19 @@ app.service('services', function () {
 
     this.saveMovie = function (response) {
         let duration = parseInt(response.data.Runtime);
-        console.log(response.data.Genre);
+        let poster;
+
+        if (response.data.Poster == 'N/A') {
+            poster = 'https://pbs.twimg.com/profile_images/600060188872155136/st4Sp6Aw.jpg';
+        } else {
+            poster = response.data.Poster;
+        }
         return newMovie = {
                     title: response.data.Title,
                     year: response.data.Year,
                     genre: response.data.Genre,
                     plot: response.data.Plot,
-                    poster: response.data.Poster,
+                    poster: poster,
                     runtime: duration,
                     alarm: 'Off'
         };
