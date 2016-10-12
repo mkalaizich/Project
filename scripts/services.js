@@ -38,6 +38,11 @@ app.service('services', function () {
         }
     }
 
+    this.getTrailer = function (response) {
+        let videoId = response.data.items[0].id.videoId;
+        return trailer = 'https://www.youtube.com/embed/' + videoId;
+    }
+
     this.store = function (newMovie) {
         localStorage.setItem(newMovie.title, JSON.stringify({ 
             title: newMovie.title, 
