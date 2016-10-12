@@ -1,6 +1,7 @@
 app.controller('listController', function($scope, services) {
 
     $scope.movies = [];
+    $scope.maxRuntime = 210;
     let day = services.currentDay();
     
     for (let i = 0; i < localStorage.length; i++) {
@@ -13,15 +14,30 @@ app.controller('listController', function($scope, services) {
         
         $scope.movies.push({ 
             title: storedMovie.title, 
-            year: storedMovie.year, 
+            year: storedMovie.year,
+            genre: storedMovie.genre, 
             plot: storedMovie.plot,
             poster: storedMovie.poster,
             runtime: storedMovie.runtime,
             alarm: storedMovie.alarm,
             alarmOn: onOff
         });
-
     }
     //uncomment the following line in order to clear storage for tests
     //localStorage.clear(); 
+});
+
+app.filter('maxDuration', function () {
+    return function (movies, maxRuntime) {
+        let filtered = [];
+
+        for (let i = 0; i < movies.length; i++) {
+            let movie = movies[i];
+
+            if ( maxRuntime > movie.runtime) {
+                filtered.push(movie);
+            }
+        }
+    return filtered;
+    };
 });
