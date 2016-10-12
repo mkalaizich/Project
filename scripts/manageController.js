@@ -4,7 +4,7 @@ app.controller('manageController', function($scope, $http, services) {
     $scope.selectedMovie = '';
     $scope.searchedMovie = '';
     $scope.example = 0;
-
+    //Setup
     for (let i = 0; i < localStorage.length; i++) {
         let storedMovie = JSON.parse(localStorage.getItem(localStorage.key( i )));
         
@@ -13,6 +13,7 @@ app.controller('manageController', function($scope, $http, services) {
     //Controller Functions
     $scope.add = function () {
         services.store($scope.searchedMovie);
+        $scope.movies.push({ title: $scope.searchedMovie.title});
         $scope.example = 0;
         $scope.searchedMovie = '';
     }
