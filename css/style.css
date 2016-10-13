@@ -18,6 +18,24 @@
     width: 100vw;
 }
 
+.container--button {
+    background-color: #006666;
+    border-color: #006666;
+    border-radius: 7px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-sizing: border-box;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    margin-left: 3px; 
+    margin-top: 3px;
+}
+
+.container--button:hover {
+    background-color: #00cccc;
+    border-color: #00cccc;
+}
+
 .container--header {
     box-sizing: border-box;
     color: #6b00b3;
@@ -27,11 +45,15 @@
     width: 100vw;
 }
 
-.displayInfo{
+.container--input {
+    margin-left: 3px;
+}
+
+.displayInfo {
     float: left;
 }
 
-.displayInfo--plot{
+.displayInfo--plot {
     color: #6b00b3;
     display: block;
     margin: 0px;
@@ -39,7 +61,7 @@
     width: 175px;
 }
 
-.displayInfo--poster{
+.displayInfo--poster {
     float:left; 
 }
 
@@ -75,8 +97,12 @@
     width: 15vw;
 }
 
-.sidelist--input1{
+.sidelist--input1 {
     width: 40px;
+}
+
+.sidelist--input2 {
+    width: 110px;
 }
 
 .sidelist--text, .table--text {
@@ -85,8 +111,8 @@
     float: left;
     text-align: left;
 }
-
-.table{
+ 
+.table {
     clear: left;
     float: left;
 }
