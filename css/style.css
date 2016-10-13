@@ -11,8 +11,10 @@
     margin: 0px;
     padding: 0px;
 }
+
 .container, .navigation {
     box-sizing: border-box;
+    clear: both;
     float: left;
     min-width: 320px;
     width: 100vw;
@@ -27,7 +29,8 @@
     color: white;
     font-size: 12px;
     font-weight: bold;
-    margin-left: 3px; 
+    margin-left: 3px;
+    margin-bottom: 3px; 
     margin-top: 3px;
 }
 
@@ -49,11 +52,11 @@
     margin-left: 3px;
 }
 
-.displayInfo {
+.displayInfo, .previewInfo {
     float: left;
 }
 
-.displayInfo--plot {
+.displayInfo--plot, .previewInfo--plot {
     color: #6b00b3;
     display: block;
     margin: 0px;
@@ -61,7 +64,7 @@
     width: 175px;
 }
 
-.displayInfo--poster {
+.displayInfo--poster, .previewInfo--poster {
     float:left; 
 }
 
@@ -86,6 +89,10 @@
 
 .navigation--link:hover {
     background-color: #111;
+}
+
+.previewInfo--plot, .previewInfo--poster, .previewInfo--trailer {
+    padding-left: 3px;
 }
 
 .sidelist {
