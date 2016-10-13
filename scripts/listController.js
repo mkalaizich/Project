@@ -39,6 +39,8 @@ app.controller('listController', function($scope, services) {
         image.src = poster;
         image.width = 175;
         image.height = 259;
+        image.classList.add("displayInfo--poster");
+        details.classList.add("displayInfo--plot");
         infoDisplay.appendChild(image);
         infoDisplay.appendChild(details);
     }

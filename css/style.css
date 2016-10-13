@@ -1,31 +1,110 @@
 .blink_me {
   animation: blinker 3s linear infinite;
-  background-color: green;
+  background-color: #006666;
 }
 
 @keyframes blinker {  
   50% { opacity: 0; }
 }
 
+.body {
+    margin: 0px;
+    padding: 0px;
+}
 .container, .navigation {
+    box-sizing: border-box;
     float: left;
     min-width: 320px;
-    width: 70vw;
+    width: 100vw;
 }
 
-.navigation {
-    background-color: #333;
-    border-radius: 7px;
-}
-
-.navigation--link {
-    padding: 5px;
-    color: white;
+.container--header {
+    box-sizing: border-box;
+    color: #6b00b3;
     float: left;
-    text-align: center;
+    min-width: 320px;
+    padding: 5px;
+    width: 100vw;
+}
+
+.displayInfo{
+    float: left;
+}
+
+.displayInfo--plot{
+    color: #6b00b3;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    width: 175px;
+}
+
+.displayInfo--poster{
+    float:left; 
 }
 
 .link {
     color: blue;
     text-decoration: underline;
+}
+
+.navigation, .sidelist{
+    background-color: #333;
+    border-radius: 7px;
+}
+
+.navigation--link {
+    color: white;
+    float: left;
+    font-size: 3vw;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.navigation--link:hover {
+    background-color: #111;
+}
+
+.sidelist {
+    clear: left;
+    display: inline;
+    float: left;
+    min-height: 100vh;
+    min-width: 136px;
+    width: 15vw;
+}
+
+.sidelist--input1{
+    width: 40px;
+}
+
+.sidelist--text, .table--text {
+    clear: both;
+    color: white;
+    float: left;
+    text-align: left;
+}
+
+.table{
+    clear: left;
+    float: left;
+}
+
+.table--text {
+    border-bottom: 1pt dotted #0055ff;
+}
+
+.table--text:hover {
+    background-color: #111;
+}
+
+.table--title {
+    color: white;
+    text-align: left;
+    width: 120px;
+}
+
+.table--trailer {
+    width: 16px;
 }
