@@ -1,6 +1,6 @@
 <h2 class="container--header">Set a Movie Alarm</h2>
 <select class="container--input" ng-model="selectedMovie">
-    <option ng-repeat="x in movies">{{ x.title }}</option>
+    <option ng-repeat="x in movies | orderBy:'title'">{{ x.title }}</option>
 </select>
 <select class="container--input" ng-model="alarmDay">
     <option>Off</option>
