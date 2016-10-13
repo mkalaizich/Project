@@ -7,6 +7,24 @@
   50% { opacity: 0; }
 }
 
+.container, .navigation {
+    float: left;
+    min-width: 320px;
+    width: 70vw;
+}
+
+.navigation {
+    background-color: #333;
+    border-radius: 7px;
+}
+
+.navigation--link {
+    padding: 5px;
+    color: white;
+    float: left;
+    text-align: center;
+}
+
 .link {
     color: blue;
     text-decoration: underline;
