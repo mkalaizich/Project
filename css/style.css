@@ -1,10 +1,6 @@
 .blink_me {
-  animation: blinker 3s linear infinite;
+  animation: blinker 2s linear infinite;
   background-color: #006666;
-}
-
-@keyframes blinker {  
-  50% { opacity: 0; }
 }
 
 .body {
@@ -56,12 +52,12 @@
     float: left;
 }
 
-.displayInfo--plot, .previewInfo--plot {
+.displayInfo--plot {
     color: #6b00b3;
-    display: block;
+    display: inline-block;
     margin: 0px;
     padding: 0px;
-    width: 175px;
+    width: 225px;
 }
 
 .displayInfo--poster, .previewInfo--poster {
@@ -81,7 +77,7 @@
 .navigation--link {
     color: white;
     float: left;
-    font-size: 3vw;
+    font-size: 16px;
     padding: 12px;
     text-align: center;
     text-decoration: none;
@@ -92,7 +88,9 @@
 }
 
 .previewInfo--plot, .previewInfo--poster, .previewInfo--trailer {
+    display: block;
     padding-left: 3px;
+    width: 175px;
 }
 
 .sidelist {
@@ -140,4 +138,22 @@
 
 .table--trailer {
     width: 16px;
+}
+
+@keyframes blinker {  
+  50% { opacity: 0; }
+}
+
+
+@media (max-width: 530px) {
+    .displayInfo--plot {
+        display: block;
+        width: 175px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navigation--link, .table--title {
+        font-size: 4vw;
+    }
 }
