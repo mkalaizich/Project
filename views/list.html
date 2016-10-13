@@ -31,14 +31,10 @@
     </select>
 </label><br/>
 <table>
-    <tr>
-        <th>Title</th>
-        <th>Alarm</th>
-        <th>Year</th>
-    </tr>
     <tr class="list--element" ng-repeat="x in movies | maxDuration: maxRuntime | filter: {'genre': genre}| orderBy:'title'">
-        <td ng-class="{blink_me: {{ x.alarmOn }}}">{{ x.title }}</td>
-        <td>{{ x.alarm }}</td>
-        <td>{{ x.year }}</td>
+        <td ng-class="{blink_me: {{ x.alarmOn }}}" ng-mouseover="showInfo(x.poster, x.plot)">{{ x.title }}</td>
+        <td><a href="{{ x.trailer }}" target="_blank">Trailer</a></td>
     </tr>
 </table>
+<div class="displayInfo">
+</div>

@@ -38,7 +38,12 @@ app.service('services', function () {
         }
     }
 
-    this.store = function (newMovie) {
+    this.getTrailer = function (response) {
+        let videoId = response.data.items[0].id.videoId;
+        return trailer = 'https://www.youtube.com/embed/' + videoId;
+    }
+
+    this.store = function (newMovie, trailer) {
         localStorage.setItem(newMovie.title, JSON.stringify({ 
             title: newMovie.title, 
             year: newMovie.year,
@@ -46,7 +51,9 @@ app.service('services', function () {
             plot: newMovie.plot,
             poster: newMovie.poster,
             runtime: newMovie.runtime,
+            trailer: trailer,
             alarm: newMovie.alarm
+            
         }));
     }
 

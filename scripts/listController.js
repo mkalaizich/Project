@@ -19,9 +19,28 @@ app.controller('listController', function($scope, services) {
             plot: storedMovie.plot,
             poster: storedMovie.poster,
             runtime: storedMovie.runtime,
+            trailer: storedMovie.trailer,
             alarm: storedMovie.alarm,
             alarmOn: onOff
         });
+    }
+
+    $scope.showInfo = function (poster, plot) {
+        let image = document.createElement('img');
+        let details = document.createElement('p');
+        let text = document.createTextNode(plot);
+        let infoDisplay = document.querySelector(".displayInfo");
+
+        while (infoDisplay.hasChildNodes()) {
+            infoDisplay.removeChild(infoDisplay.childNodes[0]);
+        }
+
+        details.appendChild(text);
+        image.src = poster;
+        image.width = 175;
+        image.height = 259;
+        infoDisplay.appendChild(image);
+        infoDisplay.appendChild(details);
     }
     //uncomment the following line in order to clear storage for tests
     //localStorage.clear(); 
