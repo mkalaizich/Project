@@ -25,8 +25,8 @@
     color: white;
     font-size: 12px;
     font-weight: bold;
-    margin-left: 3px;
     margin-bottom: 3px; 
+    margin-left: 3px;
     margin-top: 3px;
 }
 
@@ -48,15 +48,18 @@
     margin-left: 3px;
 }
 
+.container--text, .displayInfo--plot {
+    color: #6b00b3;
+    display: inline-block;
+    margin: 0px;
+    padding: 3px;
+}
+
 .displayInfo, .previewInfo {
     float: left;
 }
 
 .displayInfo--plot {
-    color: #6b00b3;
-    display: inline-block;
-    margin: 0px;
-    padding: 0px;
     width: 225px;
 }
 
@@ -66,6 +69,7 @@
 
 .link {
     color: blue;
+    padding-left: 3px; 
     text-decoration: underline;
 }
 
@@ -85,6 +89,10 @@
 
 .navigation--link:hover {
     background-color: #111;
+}
+
+.previewInfo--advise, .previewInfo--plot {
+    color: #6b00b3;
 }
 
 .previewInfo--plot, .previewInfo--poster, .previewInfo--trailer {
@@ -148,6 +156,7 @@
 @media (max-width: 530px) {
     .displayInfo--plot {
         display: block;
+        padding: 0px;
         width: 175px;
     }
 }
