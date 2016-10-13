@@ -1,8 +1,8 @@
-<h2>Set a Movie Alarm</h2>
-<select ng-model="selectedMovie">
+<h2 class="container--header">Set a Movie Alarm</h2>
+<select class="container--input" ng-model="selectedMovie">
     <option ng-repeat="x in movies">{{ x.title }}</option>
 </select>
-<select ng-model="alarmDay">
+<select class="container--input" ng-model="alarmDay">
     <option>Off</option>
     <option>Monday</option>
     <option>Tuesday</option>
@@ -12,4 +12,4 @@
     <option>Saturday</option>
     <option>Sunday</option>
 </select>
-<button ng-click="setAlarm()">Set Alarm</button>
+<button class="container--button" ng-click="setAlarm()">Set Alarm</button>

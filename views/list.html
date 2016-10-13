@@ -1,44 +1,47 @@
-<header>My Movie List</header>
-<label>
-    Filter by Maximum Runtime
-    <input type="number" min="40" max="210" step="10" value="30" ng-model="maxRuntime">
-</label>
-<label>
-    Filter by Genre
-    <select ng-model="genre">
-        <option></option>
-        <option>Action</option>
-        <option>Adventure</option>
-        <option>Animation</option>
-        <option>Biography</option>
-        <option>Comedy</option>
-        <option>Crime</option>
-        <option>Documentary</option>
-        <option>Drama</option>
-        <option>Family</option>
-        <option>Fantasy</option>
-        <option>Film-Noir</option>
-        <option>History</option>
-        <option>Horror</option>
-        <option>Musical</option>
-        <option>Mistery</option>
-        <option>Romance</option>
-        <option>Sci-Fi</option>
-        <option>Sport</option>
-        <option>Thriller</option>
-        <option>War</option>
-        <option>Western</option>
-    </select>
-</label><br/>
-<table>
-    <tr class="list--element" ng-repeat="x in movies | maxDuration: maxRuntime | filter: {'genre': genre}| orderBy:'title'">
-        <td ng-class="{blink_me: {{ x.alarmOn }}}" ng-mouseover="showInfo(x.poster, x.plot)">{{ x.title }}</td>
-        <td>
-            <a href="{{ x.trailer }}" target="_blank">
-                <img src="https://developers.google.com/youtube/images/YouTube-icon-full_color.png" height="11" width="16">
-            </a>
-        </td>
-    </tr>
-</table>
+<h3 class="container--header">My Movie List</h3>
+<div class="sidelist">
+    <p class="sidelist--text">Filter by:</p>
+    <label class="sidelist--text">
+        Max Runtime<br>
+        <input class="sidelist--input1" type="number" min="40" max="210" step="10" value="30" ng-model="maxRuntime">
+    </label>
+    <label class="sidelist--text">
+        Genre<br>
+        <select class="sidelist--input2" ng-model="genre">
+            <option></option>
+            <option>Action</option>
+            <option>Adventure</option>
+            <option>Animation</option>
+            <option>Biography</option>
+            <option>Comedy</option>
+            <option>Crime</option>
+            <option>Documentary</option>
+            <option>Drama</option>
+            <option>Family</option>
+            <option>Fantasy</option>
+            <option>Film-Noir</option>
+            <option>History</option>
+            <option>Horror</option>
+            <option>Musical</option>
+            <option>Mistery</option>
+            <option>Romance</option>
+            <option>Sci-Fi</option>
+            <option>Sport</option>
+            <option>Thriller</option>
+            <option>War</option>
+            <option>Western</option>
+        </select>
+    </label><br/>
+    <table class="table">
+        <tr class="table--text" ng-class="{blink_me: {{ x.alarmOn }}}" ng-repeat="x in movies | maxDuration: maxRuntime | filter: {'genre': genre}| orderBy:'title'">
+            <td class="table--title" ng-mouseover="showInfo(x.poster, x.plot)">{{ x.title }}</td>
+            <td class="table--trailer">
+                <a href="{{ x.trailer }}" target="_blank">
+                    <img src="https://developers.google.com/youtube/images/YouTube-icon-full_color.png" height="11" width="16">
+                </a>
+            </td>
+        </tr>
+    </table>
+</div>
 <div class="displayInfo">
 </div>

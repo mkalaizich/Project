@@ -1,15 +1,19 @@
-<input type="text" ng-model="title" placeholder="Enter a Movie"/>
-<input type="text" ng-model="year" placeholder="Enter it's year"/>
-<button ng-click="search()">Search Movie</button><br>
-<div ng-show="example">
-    <img src="{{ searchedMovie.poster }}" height="259" width="175"><br>
-    <p>{{ searchedMovie.plot }}</p>
-    <a href="{{ trailer }}" target="_blank">Watch Video Trailer</a><br>
-    <button ng-click="add()">Add Movie</button><button ng-click="notAdd()">No</button><br>
+<h2 class="container--header">Search, Add and Remove Movies to your List</h2>
+<input class="container--input" type="text" ng-model="title" placeholder="Enter a Movie"/>
+<input class="container--input" type="text" ng-model="year" placeholder="Enter it's year"/>
+<button class="container--button" ng-click="search()">Search Movie</button><br>
+<div class="previewInfo" ng-show="example">
+    <img class="previewInfo--poster" src="{{ searchedMovie.poster }}" height="259" width="175"><br>
+    <p class="previewInfo--plot">{{ searchedMovie.plot }}</p>
+    <a class="previewInfo--trailer" href="{{ trailer }}" target="_blank">Watch Video Trailer</a><br>
+    <button class="container--button" ng-click="add()">Add Movie</button>
+    <button class="container--button" ng-click="notAdd()">No</button><br>
     <p>If this is not the movie you're looking for, please specify the year</p>
 </div>
+<div class="container">
 <hr>
-<select ng-model="selectedMovie">
+<select class="container--input" ng-model="selectedMovie">
     <option ng-repeat="x in movies | orderBy:'title'">{{ x.title }}</option>
 </select>
-<button ng-click="removeMovieFromList()">Remove Movie</button>
+<button class="container--button" ng-click="removeMovieFromList()">Remove Movie</button>
+</div>

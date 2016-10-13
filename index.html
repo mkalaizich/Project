@@ -16,14 +16,14 @@
         <script type="text/javascript" src="scripts/manageController.js"></script>
         <script type="text/javascript" src="scripts/alarmController.js"></script>
     </head>
-    <body ng-app="app">
+    <body class="body" ng-app="app">
         <div class="container">
-        <a href="#/"><h1>Movie Reminder</h1></a>
+        <a href="#/"><h1 class="container--header">Movie Reminder</h1></a>
             <nav class="navigation">
                 <a class="navigation--link" href="#list">List of movies</a>
                 <a class="navigation--link" href="#manage">Manage movies</a>
                 <a class="navigation--link" href="#alarms">Alarms</a>
             </nav>
         </div>
-        <div ng-view></div>
+        <div class="container" ng-view></div>
 </html>
