@@ -29,7 +29,6 @@ app.controller('manageController', function($scope, $http, services) {
 
         index = services.getIndex($scope.selectedMovie, $scope.movies);
         if(index >= 0) {
-
             $scope.movies.splice(index, 1);
             localStorage.removeItem($scope.selectedMovie);
         }

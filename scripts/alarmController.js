@@ -13,6 +13,7 @@ app.controller('alarmController', function($scope, services) {
         
         if ($scope.alarmDay != ''){
             let clone = JSON.parse(localStorage.getItem($scope.selectedMovie));
+            
             clone.alarm = $scope.alarmDay;
             services.store(clone);
             $scope.selectedMovie = '';

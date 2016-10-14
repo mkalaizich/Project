@@ -1,7 +1,7 @@
 app.controller('listController', function($scope, services) {
 
-    $scope.movies = [];
     $scope.maxRuntime = 210;
+    $scope.movies = [];
     let day = services.currentDay();
     
     for (let i = 0; i < localStorage.length; i++) {
@@ -44,8 +44,6 @@ app.controller('listController', function($scope, services) {
         infoDisplay.appendChild(image);
         infoDisplay.appendChild(details);
     }
-    //uncomment the following line in order to clear storage for tests
-    //localStorage.clear(); 
 });
 
 app.filter('maxDuration', function () {

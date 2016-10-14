@@ -30,7 +30,7 @@ app.service('services', function () {
     }
 
     this.getIndex = function (title, target) {
-        for (let i = 0; i < target.length; i++){
+        for (let i = 0; i < target.length; i++) {
             if (target[i].title == title){
                 return index = i;
                 break;
